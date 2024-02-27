@@ -1,6 +1,6 @@
 # Password Generator
 
-Generates random characters as password according to the given length.
+Generates random characters as a password according to the given length.
 
 ## Build
 ```console
