@@ -61,9 +61,11 @@ int main(int argc, char** argv) {
     } while(password_length < 4 || password_length > 255);
 
     std::string combined;
+    std::string prev_arg;
 
     for(int i = 1; i <= argc - 1; ++i) {
-        if(args.find(argv[i]) != args.end()) {
+        if(args.find(argv[i]) != args.end() && prev_arg != argv[i]) {
+            prev_arg = argv[i];
             combined += args.at(argv[i])();
         }
     }
