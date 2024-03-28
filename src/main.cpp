@@ -2,35 +2,29 @@
 #include <random>
 #include <unordered_map>
 
-static const std::unordered_map<std::string, std::string (*)()> args = {
+static const std::unordered_map<std::string, const char* (*)()> args = {
     {
         "--lower-alpha",
         []() {
-            std::string ret;
-            for(int i = 97; i <= 122; ++i) {
-                ret.push_back(i);
-            }
-            return ret;
+            return "abcdefghijklmnopqrstuvwxyz";
         }
     },
     {
         "--upper-alpha",
         []() {
-            std::string ret;
-            for(int i = 65; i <= 90; ++i) {
-                ret.push_back(i);
-            }
-            return ret;
+            return "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         }
     },
     {
         "--num",
         []() {
-            std::string ret;
-            for(int i = 48; i <= 57; ++i) {
-                ret.push_back(i);
-            }
-            return ret;
+            return "0123456789";
+        }
+    },
+    {
+        "--sym",
+        []() {
+            return "~`!@#$%^&*()-_+={}[]:|\\;\"'<,>.?/";
         }
     }
 };
